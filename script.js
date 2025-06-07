@@ -3,6 +3,7 @@ const lengthSlider = document.getElementById("length");
 const lengthText = document.getElementById("length-text");
 const includeChars = document.getElementById("characters");
 const includeNums = document.getElementById("numbers");
+const warning = document.getElementById("warning");
 
 function updateLengthText() {
   lengthText.innerText = "Length " + lengthSlider.value;
@@ -20,6 +21,15 @@ function generatePassword() {
   if (includeChars.checked) charset += letters + symbols;
   if (includeNums.checked) charset += numbers;
 
+  // Show warning if both checkboxes are unchecked
+  if (!includeChars.checked && !includeNums.checked) {
+    warning.style.display = "block";
+    passwordInput.value = "";
+    return;
+  } else {
+    warning.style.display = "none";
+  }
+
   let password = "";
   for (let i = 0; i < length; i++) {
     const randomIndex = Math.floor(Math.random() * charset.length);
@@ -30,12 +40,13 @@ function generatePassword() {
 }
 
 function copyPassword() {
+  if (passwordInput.value === "") return;
   passwordInput.select();
   document.execCommand("copy");
   alert("Password copied!");
 }
 
-// Init
+// Initialize on load
 window.onload = () => {
   updateLengthText();
   generatePassword();

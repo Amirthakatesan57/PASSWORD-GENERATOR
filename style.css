@@ -12,18 +12,17 @@ body {
 .generator-box {
   background-color: #06130f;
   color: white;
-  width: 600px; /* increased from 500px */
-  padding: 40px; /* more spacing */
+  width: 600px; /* Increased width */
+  padding: 40px; /* Increased padding */
   border-radius: 25px;
   text-align: center;
 }
-
 
 .title {
   background-color: white;
   color: black;
   font-weight: bold;
-  font-size: 32px;
+  font-size: 28px;
   padding: 12px;
   border-radius: 30px;
   margin-bottom: 30px;
@@ -61,6 +60,7 @@ body {
   justify-content: center;
   align-items: center;
   gap: 15px;
+  margin-bottom: 15px;
 }
 
 .settings input[type="range"] {
@@ -71,4 +71,10 @@ body {
   display: flex;
   align-items: center;
   gap: 5px;
+}
+
+.warning-message {
+  color: #ff4d4d;
+  margin-top: 10px;
+  font-weight: bold;
 }

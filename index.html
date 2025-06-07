@@ -17,11 +17,15 @@
     </div>
 
     <div class="settings">
-      <input type="range" id="length" min="6" max="50" value="32" oninput="updateLengthText()" />
+      <input type="range" id="length" min="4" max="50" value="32" oninput="updateLengthText()" />
       <span id="length-text">Length 32</span>
       
       <label><input type="checkbox" id="characters" checked /> Characters</label>
       <label><input type="checkbox" id="numbers" checked /> Numbers</label>
+    </div>
+
+    <div id="warning" class="warning-message" style="display: none;">
+      ⚠️ Please select at least one option (Characters or Numbers).
     </div>
   </div>
 
